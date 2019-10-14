@@ -12,9 +12,9 @@ if package_name not in installed_packages:
     
 #establish slave-db mysql connection 
 
-hostname = "slave.camv7qolninq.ap-south-1.rds.amazonaws.com"
-username = "tech"
-password = "[%2!jQpem&-$;Sk#7KdG"
+hostname = "XXXXXXXXXXXXXXXXXXXX"
+username = "YYYYYYYYYYY"
+password = "ZZZZZZZZZZZ"
 db_conn = dbConnection.DBConnect(hostname = hostname,
                                  username = username,
                                  password = password)
