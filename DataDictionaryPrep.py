@@ -10,11 +10,11 @@ package_name = 'mysql-connector'
 if package_name not in installed_packages:
     subprocess.check_call(['python','-m','pip','install',package_name])
     
-#establish slave-db mysql connection 
+#establish mysql connection 
 
-hostname = "slave.camv7qolninq.ap-south-1.rds.amazonaws.com"
-username = "tech"
-password = "[%2!jQpem&-$;Sk#7KdG"
+hostname = "XXXXXXXXXXXXXXXXXXXX"
+username = "YYYYYYYYYYY"
+password = "ZZZZZZZZZZZ"
 db_conn = dbConnection.DBConnect(hostname = hostname,
                                  username = username,
                                  password = password)
@@ -50,4 +50,4 @@ for db in dbs:
         total_df = total_df.append(flags_df)
 
 total_df.fillna(0,inplace=True)
-total_df.to_csv('Complete-SlaveDB-dictionary.csv',index=False)
+total_df.to_csv('Complete-dbname-dictionary.csv',index=False)
