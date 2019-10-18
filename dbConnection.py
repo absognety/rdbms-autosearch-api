@@ -66,8 +66,9 @@ class DBConnect(object):
                 tables = [i[0] for i in tables]
                 if tb_name in tables:
                     result.append({'Database':db[0],'Table':tb_name})
-                    return result
                 else:
                     continue
         if not result:
-            print ("the table with name {} does not exist".format(tb_name))s
+            print ("the table with name {} does not exist".format(tb_name))
+        else:
+            return result
