@@ -50,3 +50,24 @@ class DBConnect(object):
             df_cols.loc[ind,colnames] = 1
             ind += 1
         return df_cols
+    
+    def search_table(self,conn,dbs,tb_name):
+        result = []
+        for db in dbs:
+            if ((db[0] == 'information_schema') |
+                (db[0] == 'performance_schema') |
+                (db[0] == 'sys') |
+                (db[0] == 'mysql')):
+                continue
+            else:
+                use_query = "use " + db[0] + ";"
+                use_db = self.run_query(conn,use_query,use=True)
+                tables = self.run_query(conn,"show tables;")
+                tables = [i[0] for i in tables]
+                if tb_name in tables:
+                    result.append({'Database':db[0],'Table':tb_name})
+                    return result
+                else:
+                    continue
+        if not result:
+            print ("the table with name {} does not exist".format(tb_name))s
