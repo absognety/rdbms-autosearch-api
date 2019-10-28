@@ -1,8 +1,8 @@
-### slave db dictionary prep starts here ##
+### db dictionary prep starts here ##
     
 import mysql.connector
 import pandas as pd
-# Slave DB connection
+# DB connection
 class DBConnect(object):
     def __init__(self,hostname,username,
                  password):
